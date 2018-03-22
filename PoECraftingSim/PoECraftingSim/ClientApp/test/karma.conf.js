@@ -6,6 +6,7 @@ module.exports = function (config) {
         basePath: '.',
         frameworks: ['jasmine'],
         files: [
+            { pattern: '../../../../node_modules/jquery/dist/jquery.min.js', watched: false },
             '../../wwwroot/dist/vendor.js',
             './boot-tests.ts'
         ],
