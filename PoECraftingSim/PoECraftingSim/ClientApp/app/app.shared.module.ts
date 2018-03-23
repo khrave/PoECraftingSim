@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { AbyssJewelComponent } from './components/abyssjewel/abyssjewel.component';
+import { CurrencyWindowComponent } from './components/currencywindow/currencywindow.component';
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { AbyssJewelComponent } from './components/abyssjewel/abyssjewel.componen
         CounterComponent,
         FetchDataComponent,
         HomeComponent,
-        AbyssJewelComponent
+        AbyssJewelComponent,
+        CurrencyWindowComponent
     ],
     imports: [
         CommonModule,
@@ -29,7 +31,8 @@ import { AbyssJewelComponent } from './components/abyssjewel/abyssjewel.componen
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
-            { path: 'abyss-jewel', component: AbyssJewelComponent},
+            { path: 'abyssjewel', component: AbyssJewelComponent },
+            { path: 'currencywindow', component: CurrencyWindowComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]

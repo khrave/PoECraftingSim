@@ -1,22 +1,33 @@
-﻿<div>
-    <a id="cobaltButton" (click)="selectGhastlyEye()"><img src="../../../assets/Images/Jewels/GhastlyEye.png" /></a>
-    <a id="cobaltButton" (click)="selectHypnoticEye()"><img src="../../../assets/Images/Jewels/HypnoticEye.png" /></a>
-    <a id="cobaltButton" (click)="selectMurderousEye()"><img src="../../../assets/Images/Jewels/MurderousEye.png" /></a>
-    <a id="cobaltButton" (click)="selectSearchingEye()"><img src="../../../assets/Images/Jewels/SearchingEye.png" /></a>
-</div>
-<div class="row col-lg-4">
-    <div class="jw-item-properties">
-        <div class="jw-item-spotlight poe-item-overlay poe-item-rare">
-            <div class="poe-itemdesc-header">
-                <div>{{jewelType}}</div>
-            </div>
-            <div class="poe-itemdesc-augmenttext">What am</div>
-            <div class="poe-itemdesc-augmenttext">I even</div>
-            <div class="poe-itemdesc-augmenttext">Doing Right</div>
-            <div class="poe-itemdesc-augmenttext">now, Richard?</div>
-            <div>                
-                <img id="selectedJewelImage" src="{{ jewelImageURL }}">
+﻿<div class="row">
+    <div class="col-lg-1 jw-item-spotlight">
+        <a id="ghastlyButton" class="btn" (click)="selectGhastlyEye()"><img src="../../../assets/Images/Jewels/GhastlyEye.png" /></a>
+        <a id="hypnoticButton" class="btn" (click)="selectHypnoticEye()"><img src="../../../assets/Images/Jewels/HypnoticEye.png" /></a>
+        <a id="murderousButton" class="btn" (click)="selectMurderousEye()"><img src="../../../assets/Images/Jewels/MurderousEye.png" /></a>
+        <a id="searchingButton" class="btn" (click)="selectSearchingEye()"><img src="../../../assets/Images/Jewels/SearchingEye.png" /></a>
+    </div>
+    <div class="row col-lg-5">
+        <div class="jw-item-properties">
+            <div class="jw-item-spotlight poe-item-overlay poe-item-rare">
+                <div class="poe-itemdesc-header">
+                    <div>{{jewelType}}</div>
+                </div>
+                <div class="poe-itemdesc-augmenttext">What am</div>
+                <div class="poe-itemdesc-augmenttext">I even</div>
+                <div class="poe-itemdesc-augmenttext">Doing Right</div>
+                <div class="poe-itemdesc-augmenttext">now, Richard?</div>
+                <div>
+                    <img id="selectedJewelImage" src="{{ jewelImageURL }}">
+                </div>
             </div>
         </div>
     </div>
+    <div class="col-lg-6">
+        <currencywindow
+        (onUseChaos)="onUseChaos($event)"
+        ></currencywindow>
+    </div>
 </div>
+<br />
+<br />
+<br />
+<div #log></div>

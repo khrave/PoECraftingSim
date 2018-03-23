@@ -1,11 +1,13 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
     selector: 'abyssjewel',
     templateUrl: './abyssjewel.component.html',
-    styleUrls: ['./abyssjewel.component.css']
+    styleUrls: ['../../../assets/CSS/PoECraftStyle.css']
 })
 export class AbyssJewelComponent {
+
+    @ViewChild('log') log: ElementRef;
     public jewelBase = "MurderousEye";
     public jewelType = "Murderous Eye"
 
@@ -31,5 +33,9 @@ export class AbyssJewelComponent {
     public selectSearchingEye() {
         this.jewelBase = "SearchingEye";
         this.jewelType = "Searching Eye";
+    }
+
+    onUseChaos() {
+        this.log.nativeElement.insertAdjacentHTML('beforeend', '<div>Chaos was used!</div>');
     }
 }
