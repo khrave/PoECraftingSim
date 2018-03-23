@@ -26,6 +26,7 @@
     <None Remove="ClientApp\app\components\abyssjewel\abyssjewel.component.ts" />
     <None Remove="ClientApp\app\components\currencywindow\currencywindow.component.spec.ts" />
     <None Remove="ClientApp\app\components\currencywindow\currencywindow.component.ts" />
+    <None Remove="ClientApp\app\Data\CurrencyOrbs.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +34,7 @@
     <TypeScriptCompile Include="ClientApp\app\components\abyssjewel\abyssjewel.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\currencywindow\currencywindow.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\currencywindow\currencywindow.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Data\CurrencyOrbs.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
