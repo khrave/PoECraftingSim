@@ -35,7 +35,7 @@ export class AbyssJewelComponent {
         this.jewelType = "Searching Eye";
     }
 
-    onUseChaos() {
-        this.log.nativeElement.insertAdjacentHTML('beforeend', '<div>Chaos was used!</div>');
+    onUseChaos(orbType: string) {
+        this.log.nativeElement.insertAdjacentHTML('beforeend', '<div>' + orbType + ' was used!</div>');
     }
 }

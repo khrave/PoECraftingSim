@@ -6,9 +6,9 @@
     styleUrls: ['../../../assets/CSS/PoECraftStyle.css']
 })
 export class CurrencyWindowComponent {
-    @Output() onUseChaos = new EventEmitter();
+    @Output() onUseOrb = new EventEmitter<string>();
 
-    useChaos() {
-        this.onUseChaos.emit();
-    }
+    useOrb(orbType: string) {
+        this.onUseOrb.emit(orbType);
+    }    
 }
