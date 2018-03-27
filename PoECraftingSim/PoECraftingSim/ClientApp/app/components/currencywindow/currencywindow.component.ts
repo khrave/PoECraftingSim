@@ -1,5 +1,5 @@
 ﻿import { Component, EventEmitter, Output } from '@angular/core';
-import * as CurrencyOrbs from '../../Data/CurrencyOrbs';
+import * as CurrencyOrbs from '../../../Data/CurrencyOrbs';
 
 @Component({
     selector: 'currencywindow',

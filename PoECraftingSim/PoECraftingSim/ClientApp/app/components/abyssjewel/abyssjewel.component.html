@@ -11,10 +11,8 @@
                 <div class="poe-itemdesc-header">
                     <div>{{jewelType}}</div>
                 </div>
-                <div class="poe-itemdesc-augmenttext">What am</div>
-                <div class="poe-itemdesc-augmenttext">I even</div>
-                <div class="poe-itemdesc-augmenttext">Doing Right</div>
-                <div class="poe-itemdesc-augmenttext">now, Richard?</div>
+                <div #mods></div>
+                <div class="poe-itemdesc-augmenttext">What</div>
                 <div>
                     <img id="selectedJewelImage" src="{{ jewelImageURL }}">
                 </div>
@@ -23,7 +21,7 @@
     </div>
     <div class="col-lg-6">
         <currencywindow
-        (onUseOrb)="onUseChaos($event)"
+        (onUseOrb)="onUseOrb($event)"
         ></currencywindow>
     </div>
 </div>
