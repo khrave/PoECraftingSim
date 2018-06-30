@@ -5,9 +5,9 @@
         <a id="murderousButton" class="btn" (click)="selectMurderousEye()"><img src="../../../assets/Images/Jewels/MurderousEye.png" /></a>
         <a id="searchingButton" class="btn" (click)="selectSearchingEye()"><img src="../../../assets/Images/Jewels/SearchingEye.png" /></a>
     </div>
-    <div class="row col-lg-5">
+    <div class="row col-lg-6">
         <div class="jw-item-properties">
-            <div id="itemHeader" class="jw-item-spotlight poe-item-overlay poe-item-normal">
+            <div id="itemHeader" class="jw-item-spotlight poe-item-overlay" [ngClass]="GetItemStatus()">
                 <div class="poe-itemdesc-header">
                     <div>{{jewelName}}</div>
                 </div>
@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-5">
         <currencywindow
         (onUseOrb)="onUseOrb($event)"
         ></currencywindow>

@@ -31,7 +31,7 @@ export enum Categories {
     LifeRegenPerSecond,
     ManaRegenPerSecond,
     Armour,
-    Evasion,
+    EvasionRating,
     ES,
     BlindOnHit,
     TauntOnHit,
@@ -39,6 +39,8 @@ export enum Categories {
     AvoidShock,
     AvoidBleeding,
     AvoidStun,
+    AvoidChillFreeze,
+    AvoidPoison,
     FlatAccuracy,
     OnslaughtOnKill,
     UnholyMightOnMeleeKill

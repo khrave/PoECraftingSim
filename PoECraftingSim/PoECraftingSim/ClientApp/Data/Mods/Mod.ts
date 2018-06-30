@@ -8,7 +8,7 @@ export class Mod {
     public Text: string;
     public Weight: number;
     public LowerRange: [number, number];
-    public UpperRange: [number, number] | null;
+    public UpperRange: [number, number];
     public Group: Types.Groups | null
     public Category: Types.Categories | null;
 
@@ -26,9 +26,9 @@ export class Mod {
         this.Category = category;
     }
 
-    public Output = (assignedLowerValue: number, assignedUpperValue: number): string => {
-        var text = this.Text.replace("r1", assignedLowerValue.toString());
-        return text.replace("r2", assignedUpperValue.toString());
+    public Output = (assignedLowerValue: string, assignedUpperValue: string): string => {
+        var text = this.Text.replace("r1", assignedLowerValue);
+        return text.replace("r2", assignedUpperValue);
     }
 }
 
