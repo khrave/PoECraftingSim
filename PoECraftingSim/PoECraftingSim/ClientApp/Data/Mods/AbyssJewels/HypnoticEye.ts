@@ -162,7 +162,7 @@ export class Mods {
         this.Modlist.push(new Mod("of Arcing", AffixTypes.Suffix, 75, ItemTypes.HypnoticEyeJewel, "Adds r1 to r2 Lightning Damage to Spells", 153, [1, 6], [37, 45], Groups.None, Categories.FlatLightningDamage));
         this.Modlist.push(new Mod("of Heft", AffixTypes.Suffix, 32, ItemTypes.HypnoticEyeJewel, "Adds r1 to r2 Physical Damage to Spells", 153, [3, 4], [6, 7], Groups.None, Categories.FlatPhysicalDamage));
         this.Modlist.push(new Mod("of Force", AffixTypes.Suffix, 45, ItemTypes.HypnoticEyeJewel, "Adds r1 to r2 Physical Damage to Spells", 153, [5, 7], [8, 10], Groups.None, Categories.FlatPhysicalDamage));
-        this.Modlist.push(new Mod("of Weight", AffixTypes.Suffix, 56, ItemTypes.HypnoticEyeJewel, "Adds r1 to r2 Physical Damage to Spells", 153, [(8 - 10), (8 - 10)], [11, 13], Groups.None, Categories.FlatPhysicalDamage));
+        this.Modlist.push(new Mod("of Weight", AffixTypes.Suffix, 56, ItemTypes.HypnoticEyeJewel, "Adds r1 to r2 Physical Damage to Spells", 153, [8, 10], [11, 13], Groups.None, Categories.FlatPhysicalDamage));
         this.Modlist.push(new Mod("of Impact", AffixTypes.Suffix, 65, ItemTypes.HypnoticEyeJewel, "Adds r1 to r2 Physical Damage to Spells", 153, [11, 13], [14, 16], Groups.None, Categories.FlatPhysicalDamage));
         this.Modlist.push(new Mod("of Collision", AffixTypes.Suffix, 78, ItemTypes.HypnoticEyeJewel, "Adds r1 to r2 Physical Damage to Spells", 153, [14, 16], [18, 22], Groups.None, Categories.FlatPhysicalDamage));
         this.Modlist.push(new Mod("of Dishonour", AffixTypes.Suffix, 33, ItemTypes.HypnoticEyeJewel, "Adds r1 to r2 Chaos Damage to Spells", 153, [3, 4], [6, 7], Groups.None, Categories.FlatChaosDamage));
