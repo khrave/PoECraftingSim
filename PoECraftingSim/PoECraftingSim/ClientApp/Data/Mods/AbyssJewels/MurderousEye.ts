@@ -8,7 +8,7 @@ export class Mods {
         //Prefixes
 
         //Health
-        this.Modlist.push(new Mod("Hale", AffixTypes.Prefix, 1, ItemTypes.MurderousEyeJewel, "+r1 to maximum Life", 338, [25, 30], [0, 0], Groups.None, Categories.FlatLife));
+        this.Modlist.push(new Mod("Hale", AffixTypes.Prefix, 1, ItemTypes.MurderousEyeJewel, "+r1 to maximum Life", 338, [25, 30], [0, 0], Groups.None, Categories.FlatLife));        
         this.Modlist.push(new Mod("Healthy", AffixTypes.Prefix, 35, ItemTypes.MurderousEyeJewel, "+r1 to maximum Life", 338, [31, 35], [0, 0], Groups.None, Categories.FlatLife));
         this.Modlist.push(new Mod("Sanguine", AffixTypes.Prefix, 74, ItemTypes.MurderousEyeJewel, "+r1 to maximum Life", 113, [36, 45], [0, 0], Groups.None, Categories.FlatLife));
         this.Modlist.push(new Mod("Stalwart", AffixTypes.Prefix, 82, ItemTypes.MurderousEyeJewel, "+r1 to maximum Life", 113, [46, 50], [0, 0], Groups.None, Categories.FlatLife));
@@ -18,11 +18,11 @@ export class Mods {
         this.Modlist.push(new Mod("Azure", AffixTypes.Prefix, 75, ItemTypes.MurderousEyeJewel, "+r1 to maximum Mana", 113, [36, 45], [0, 0], Groups.None, Categories.FlatMana));
         this.Modlist.push(new Mod("Sapphire", AffixTypes.Prefix, 83, ItemTypes.MurderousEyeJewel, "+r1 to maximum Mana", 113, [46, 50], [0, 0], Groups.None, Categories.FlatMana));
         //Increased Damage over Time while Dual Wielding
-        this.Modlist.push(new Mod("Degenerative", AffixTypes.Prefix, 1, ItemTypes.MurderousEyeJewel, "r1% increased Damage over Time while Dual Wielding", 45, [10, 14], [0, 0], Groups.DualWielding, Categories.DamageOverTime));
+        this.Modlist.push(new Mod("Degenerative", AffixTypes.Prefix, 1, ItemTypes.MurderousEyeJewel, "r1% increased Damage over Time while Dual Wielding", 45, [10, 14], [0, 0], Groups.DualWielding, Categories.None));
         //Increased Damage over Time while wielding a Two Handed Weapon
-        this.Modlist.push(new Mod("Degenerative", AffixTypes.Prefix, 1, ItemTypes.MurderousEyeJewel, "r1% increased Damage over Time while wielding a Two Handed Weapon", 68, [10, 14], [0, 0], Groups.TwoHanded, Categories.DamageOverTime));
+        this.Modlist.push(new Mod("Degenerative", AffixTypes.Prefix, 1, ItemTypes.MurderousEyeJewel, "r1% increased Damage over Time while wielding a Two Handed Weapon", 68, [10, 14], [0, 0], Groups.TwoHanded, Categories.None));
         //Increased Damage over Time while holding a Shield
-        this.Modlist.push(new Mod("Degenerative", AffixTypes.Prefix, 1, ItemTypes.MurderousEyeJewel, "r1% increased Damage over Time while holding a Shield", 45, [10, 14], [0, 0], Groups.Shield, Categories.DamageOverTime));
+        this.Modlist.push(new Mod("Degenerative", AffixTypes.Prefix, 1, ItemTypes.MurderousEyeJewel, "r1% increased Damage over Time while holding a Shield", 45, [10, 14], [0, 0], Groups.Shield, Categories.None));
         //Physical Damage to Dagger Attacks
         this.Modlist.push(new Mod("Glinting", AffixTypes.Prefix, 1, ItemTypes.MurderousEyeJewel, "Adds r1 to r2 Physical Damage to Dagger Attacks", 56, [1, 2], [3, 4], Groups.Dagger, Categories.FlatPhysicalDamage));
         this.Modlist.push(new Mod("Gleaming", AffixTypes.Prefix, 42, ItemTypes.MurderousEyeJewel, "Adds r1 to r2 Physical Damage to Dagger Attacks", 56, [3, 4], [5, 6], Groups.Dagger, Categories.FlatPhysicalDamage));

@@ -9,6 +9,8 @@ export class Mod {
     public Weight: number;
     public LowerRange: [number, number];
     public UpperRange: [number, number];
+    public LowerValue: string;
+    public UpperValue: string;
     public Group: Types.Groups | null
     public Category: Types.Categories | null;
 

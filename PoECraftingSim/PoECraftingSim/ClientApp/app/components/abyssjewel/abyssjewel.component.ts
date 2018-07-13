@@ -1,5 +1,7 @@
 ﻿import { Component, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
 import { Mods as MurderousEyeMods } from '../../../Data/Mods/AbyssJewels/MurderousEye';
+import { Mods as SearchingEyeMods } from '../../../Data/Mods/AbyssJewels/SearchingEye';
+import { Mods as HypnoticEyeMods } from '../../../Data/Mods/AbyssJewels/HypnoticEye';
 import { Renderer } from '@angular/core/src/render/api';
 import { CurrencyOrb } from '../../../Data/CurrencyOrbs';
 import * as $ from 'jquery';
@@ -20,6 +22,8 @@ export class AbyssJewelComponent {
     public jewelType = "Murderous Eye"
     public jewelName = "Murderous Eye";
     public murderousEyeMods = new MurderousEyeMods();
+    public searchingEyeMods = new SearchingEyeMods();
+    public hypnoticEyeMods = new HypnoticEyeMods();
     public availableMods = new MurderousEyeMods().Modlist;
     public IsNormal = true;
     public IsMagic = false;
@@ -123,12 +127,7 @@ export class AbyssJewelComponent {
 
                 for (var i = 0; i < this.ItemMods.length; i++) {
                     mod = this.ItemMods[i];
-                    if (mod.Name == "Energising" || mod.Name == "Inspirational" || mod.Name == "Resonating") {
-                        $('#mods').after('<div class="poe-itemdesc-augmenttext">' + mod.Output(this.RandomDecimalInInterval(mod.LowerRange[0], mod.LowerRange[1]), this.RandomDecimalInInterval(mod.UpperRange[0], mod.UpperRange[1])) + '</div>');
-                    }
-                    else {
-                        $('#mods').after('<div class="poe-itemdesc-augmenttext">' + mod.Output(this.RandomIntInInterval(mod.LowerRange[0], mod.LowerRange[1]).toString(), this.RandomIntInInterval(mod.UpperRange[0], mod.UpperRange[1]).toString()) + '</div>');
-                    }
+                    $('#mods').after('<div class="poe-itemdesc-augmenttext">' + mod.Output(mod.LowerValue, mod.UpperValue) + '</div>');
                 }
 
                 this.RefreshName();
@@ -141,12 +140,8 @@ export class AbyssJewelComponent {
                 var mod;
                 for (var i = 0; i < this.ItemMods.length; i++) {
                     mod = this.ItemMods[i];
-                    if (mod.Name == "Energising" || mod.Name == "Inspirational" || mod.Name == "Resonating") {
-                        $('#mods').after('<div class="poe-itemdesc-augmenttext">' + mod.Output(this.RandomDecimalInInterval(mod.LowerRange[0], mod.LowerRange[1]), this.RandomDecimalInInterval(mod.UpperRange[0], mod.UpperRange[1])) + '</div>');
-                    }
-                    else {
-                        $('#mods').after('<div class="poe-itemdesc-augmenttext">' + mod.Output(this.RandomIntInInterval(mod.LowerRange[0], mod.LowerRange[1]).toString(), this.RandomIntInInterval(mod.UpperRange[0], mod.UpperRange[1]).toString()) + '</div>');
-                    }
+                    mod = this.DivineMod(mod);
+                    $('#mods').after('<div class="poe-itemdesc-augmenttext">' + mod.Output(mod.LowerValue, mod.UpperValue) + '</div>');
                 }
 
                 break;
@@ -168,6 +163,19 @@ export class AbyssJewelComponent {
         }        
     }
 
+    public DivineMod(mod: Mod) {
+        if (mod.Name == "Energising" || mod.Name == "Inspirational" || mod.Name == "Resonating" || mod.Name == "Of Vivaciousness") {
+            mod.LowerValue = this.RandomDecimalInInterval(mod.LowerRange[0], mod.LowerRange[1]);
+            mod.UpperValue = this.RandomDecimalInInterval(mod.UpperRange[0], mod.UpperRange[1]);
+        }
+        else {
+            mod.LowerValue = this.RandomIntInInterval(mod.LowerRange[0], mod.LowerRange[1]).toString();
+            mod.UpperValue = this.RandomIntInInterval(mod.UpperRange[0], mod.UpperRange[1]).toString();
+        }
+
+        return mod;
+    }
+
     public AddMod() {
         var mod = this.GetMod();
 
@@ -176,18 +184,21 @@ export class AbyssJewelComponent {
         }
 
         this.ItemMods.push(mod);
-        if (mod.Name == "Energising" || mod.Name == "Inspirational" || mod.Name == "Resonating") {
-            $('#mods').after('<div class="poe-itemdesc-augmenttext">' + mod.Output(this.RandomDecimalInInterval(mod.LowerRange[0], mod.LowerRange[1]), this.RandomDecimalInInterval(mod.UpperRange[0], mod.UpperRange[1])) + '</div>');
-        }
-        else {
-            $('#mods').after('<div class="poe-itemdesc-augmenttext">' + mod.Output(this.RandomIntInInterval(mod.LowerRange[0], mod.LowerRange[1]).toString(), this.RandomIntInInterval(mod.UpperRange[0], mod.UpperRange[1]).toString()) + '</div>');
-        }
+        $('#mods').after('<div class="poe-itemdesc-augmenttext">' + mod.Output(mod.LowerValue, mod.UpperValue) + '</div>');
 
         this.RefreshName();                
     }
 
     public GetMod() {
-        this.availableMods = this.murderousEyeMods.Modlist;
+        if (this.jewelBase == "MurderousEye") {
+            this.availableMods = this.murderousEyeMods.Modlist;
+        }
+        else if (this.jewelBase == "SearchingEye") {
+            this.availableMods = this.searchingEyeMods.Modlist;
+        }
+        else if (this.jewelBase == "HypnoticEye") {
+            this.availableMods = this.hypnoticEyeMods.Modlist;
+        }
         var canAssignPrefixes = this.CanAssignPrefixes();
         var canAssignSuffixes = this.CanAssignSuffixes();
 
@@ -233,6 +244,11 @@ export class AbyssJewelComponent {
                 break;
             }
         }
+
+        if (modToUse != null) {
+            modToUse = this.DivineMod(modToUse);
+        }
+
         
         return modToUse;
     }    
@@ -302,7 +318,15 @@ export class AbyssJewelComponent {
         this.IsRare = false;
         this.jewelName = this.jewelType;
         this.ItemMods = Array<Mod>();
-        this.availableMods = this.murderousEyeMods.Modlist;
+        if (this.jewelBase == "MurderousEye") {
+            this.availableMods = this.murderousEyeMods.Modlist;
+        }
+        else if (this.jewelBase == "SearchingEye") {
+            this.availableMods = this.searchingEyeMods.Modlist;
+        }
+        else if (this.jewelBase == "HypnoticEye") {
+            this.availableMods = this.hypnoticEyeMods.Modlist;
+        }
         $('.poe-itemdesc-augmenttext').remove();
     }
 
