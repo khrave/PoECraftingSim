@@ -167,7 +167,7 @@ export class Mods {
         this.Modlist.push(new Mod("of Collision", AffixTypes.Suffix, 78, ItemTypes.HypnoticEyeJewel, "Adds r1 to r2 Physical Damage to Spells", 153, [14, 16], [18, 22], Groups.None, Categories.FlatPhysicalDamage));
         this.Modlist.push(new Mod("of Dishonour", AffixTypes.Suffix, 33, ItemTypes.HypnoticEyeJewel, "Adds r1 to r2 Chaos Damage to Spells", 153, [3, 4], [6, 7], Groups.None, Categories.FlatChaosDamage));
         this.Modlist.push(new Mod("of Harm", AffixTypes.Suffix, 48, ItemTypes.HypnoticEyeJewel, "Adds r1 to r2 Chaos Damage to Spells", 153, [5, 7], [8, 10], Groups.None, Categories.FlatChaosDamage));
-        this.Modlist.push(new Mod("of Malevolence", AffixTypes.Suffix, 57, ItemTypes.HypnoticEyeJewel, "Adds r1 to r2 Chaos Damage to Spells", 153, [(8 - 10), (8 - 10)], [11, 13], Groups.None, Categories.FlatChaosDamage));
+        this.Modlist.push(new Mod("of Malevolence", AffixTypes.Suffix, 57, ItemTypes.HypnoticEyeJewel, "Adds r1 to r2 Chaos Damage to Spells", 153, [8, 10], [11, 13], Groups.None, Categories.FlatChaosDamage));
         this.Modlist.push(new Mod("of Malice", AffixTypes.Suffix, 68, ItemTypes.HypnoticEyeJewel, "Adds r1 to r2 Chaos Damage to Spells", 153, [11, 13], [14, 16], Groups.None, Categories.FlatChaosDamage));
         this.Modlist.push(new Mod("of Sin", AffixTypes.Suffix, 79, ItemTypes.HypnoticEyeJewel, "Adds r1 to r2 Chaos Damage to Spells", 153, [14, 16], [18, 22], Groups.None, Categories.FlatChaosDamage));
         this.Modlist.push(new Mod("of Hindering", AffixTypes.Suffix, 32, ItemTypes.HypnoticEyeJewel, "r1% chance to Hinder Enemies on Hit with Spells, with 30% reduced Movement Speed", 175, [3, 5], [0, 0], Groups.None, Categories.None));
