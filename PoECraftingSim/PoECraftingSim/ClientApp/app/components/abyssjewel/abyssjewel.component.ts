@@ -153,7 +153,7 @@ export class AbyssJewelComponent {
                 break;
             }
             case CurrencyOrb.Blessed: {
-                alert("Blessed orbs don't do shit for jewels, stop clicking this.");
+                alert("Blessed orbs don't do anything for jewels, stop clicking this.");
 
                 break;
             }
@@ -266,7 +266,7 @@ export class AbyssJewelComponent {
             }
         }
         else if (this.IsRare) {
-            this.jewelName = "Rage Clasp or some shit";
+            this.jewelName = "Rare Jewel";
         }
         else {
             this.jewelName = this.jewelType;
